@@ -21,3 +21,6 @@ app.use("/api", router);
 app.listen(port, () => {
   console.log(`Server Started at port: ${port}`);
 });
+
+
+module.exports = app;
