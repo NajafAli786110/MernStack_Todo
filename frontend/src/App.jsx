@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/tasks/");
+        const response = await axios.get("https://mernstack-todo-backend.vercel.app/api/tasks/");
         setTasks(response.data);
         console.log("Tasks fetched successfully");
       } catch (err) {
@@ -29,7 +29,7 @@ function App() {
       return;
     }
     try {
-      const response = await axios.post("http://localhost:5001/api/tasks/", {
+      const response = await axios.post("https://mernstack-todo-backend.vercel.app/api/tasks/", {
         taskName: newTaskName,
       });
       setTasks([...tasks, response.data]);
@@ -43,7 +43,7 @@ function App() {
   // Delete a task by ID
   const handleDeleteTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/tasks/${id}`);
+      await axios.delete(`https://mernstack-todo-backend.vercel.app/api/tasks/${id}`);
       setTasks(tasks.filter((task) => task._id !== id));
       console.log("Task deleted successfully");
     } catch (err) {
